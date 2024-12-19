@@ -1,5 +1,4 @@
 # Functional-Verification-of-AXI_Slave
-In this repository, we will be exploring, developing System Verilog and UVM test benches for AXI Salves
+In this repository, we will be exploring, developing System Verilog and UVM test benches for AXI Slaves
 
 
-Hello There :) How are you doing ??
