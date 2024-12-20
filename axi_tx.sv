@@ -20,13 +20,20 @@ rand resp_t resp;
 constraint rsvd_c {
 	burst_type != RSVD_BURSTT;
 	lock != RSVD_LOCKT;
-	RESP == OKAY;
 }
 
 constraint dataQ_c {
  	dataQ.size() == len+1;
 }
 
+constraint soft_c {
+	soft resp == OKAY;
+	soft burst_size == 2;
+	soft burst_type == INCR;
+	soft prot == 3'b0;
+	soft cache == 4'b0;
+	soft lock == NORMAL;
+}
 
 function void print();
 

@@ -1,5 +1,3 @@
-
-
 typedef enum bit {READ, WRITE} wr_rd_t;
 
 typedef enum bit[2:0] {
@@ -36,6 +34,7 @@ typedef enum bit [1:0] {
 
 class axi_common;
 static mailbox gen2bfm = new();
+static virtual axi_intf vif;
 
 
 endclass

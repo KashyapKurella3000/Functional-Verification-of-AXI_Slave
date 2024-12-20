@@ -1,15 +1,21 @@
 {
-    "_vcs_unit__852654982": [
-        "_vcs_unit__852654982",
-        "LzWvt",
+    "_vcs_unit__3528846135": [
+        "_vcs_unit__3528846135",
+        "p8E9m",
         "module",
-        1
+        6
     ],
     "std": [
         "std",
         "reYIK",
         "module",
         2
+    ],
+    "axi_slave": [
+        "axi_slave",
+        "TSDLW",
+        "module",
+        7
     ],
     "axi_intf": [
         "axi_intf",
