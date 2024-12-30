@@ -58,6 +58,7 @@ task write_addr_phase(axi_tx tx);
 	
 	//Reset Signals	
 	@(vif.aclk);
+	vif.awvalid = 0;
 	vif.awid = 0;
 	vif.awaddr = 0;
 	vif.awlen = 0;
@@ -109,11 +110,54 @@ endtask
 task read_addr_phase(axi_tx tx);
 	$display("read_addr_phase");
 
+	@(vif.aclk);
+	vif.arid     = tx.id;
+	vif.araddr   = tx.addr;
+	vif.arlen    = tx.len;
+	vif.arsize   = tx.burst_size;
+	vif.arburst  = tx.burst_type;
+	vif.arlock   = tx.lock;
+	vif.arcache  = tx.cache;
+	vif.arprot   = tx.prot;
+	vif.arqos    = 1'b0; // unused as of now
+	vif.arregion = 1'b0; //unused as of now
+	//vif.awuser = 1'b0; //unused as of now
+	vif.arvalid  = 1'b1; //unused as of now
+	wait(vif.arready == 1); //Wait for handshake completion
+	
+	//Reset Signals	
+	@(vif.aclk);
+	vif.arvalid = 0;
+	vif.arid = 0;
+	vif.araddr = 0;
+	vif.arlen = 0;
+	vif.arsize = 0;
+	vif.arburst = 0;
+	vif.arlock = 0;
+	vif.arcache = 0;
+	vif.arprot = 0;
+
+
 endtask
 
 task read_data_phase(axi_tx tx);
+
+	tx.dataQ.delete(); //Emptying dataQ to hold the read data coming from slave
 	$display("read_data_phase");
 
+	for(int i = 0;i <= tx.len; i++) begin
+
+		while(vif.rvalid == 0) begin
+			@(posedge vif.aclk);
+		end
+// when rvalid = 1, while loop exits, I get in dication that master is giving me valid read data.
+	tx.dataQ.push_back(vif.rdata);
+	vif.rready = 1; // To complete handshaking , axi_bfm makes rready = 1
+	@(posedge vif.aclk); //wait for one clock edge
+	vif.rready = 0;
+	end
+
+// By the time for loop ends, dataQ has all the read data's
 endtask
 
 

@@ -33,8 +33,11 @@ typedef enum bit [1:0] {
 } resp_t;
 
 class axi_common;
+
 static mailbox gen2bfm = new();
+
 static virtual axi_intf vif;
 
+static string testname;
 
 endclass

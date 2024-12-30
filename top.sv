@@ -35,11 +35,77 @@ initial begin
 
 	axi_common::vif = pif; //pointing physical interface to virtual interface
 	rst = 1;
+	//reset_design_inputs();
 	@(posedge clk);
 	rst = 0;
 	env = new();
 	env.run();
 end
+
+/*
+task reset_design_inputs();
+
+// Write Address signals
+ pif.awid = 0 ;
+ pif.awaddr = 0 ;
+ pif.awlen = 0 ;
+ pif.awsize = 0 ;
+ pif.awburst = 0 ;
+ pif.awlock = 0 ;
+ pif.awcache = 0 ;
+ pif.awprot = 0 ;
+ pif.awqos = 0 ;
+ pif.awregion = 0 ;
+ //pif.awuser = 0 ;
+ pif.awvalid = 0 ;
+ pif.awready = 0 ;
+
+// Write Data signals
+ pif.wid = 0 ;
+ pif.wdata = 0 ;
+ pif.wstrb = 0 ;
+ pif.wlast = 0 ;
+ pif.wvalid = 0 ;
+ pif.wready = 0 ;
+
+// Write Response Signals
+
+ pif.bid = 0 ;
+ pif.bresp = 0 ;
+ pif.bvalid = 0 ;
+ pif.bready = 0 ;
+
+//##################### READ Channel ######################################
+
+// Read Address signals
+ pif.arid = 0 ;
+ pif.araddr = 0 ;
+ pif.arlen = 0 ;
+ pif.arsize = 0 ;
+ pif.arburst = 0 ;
+ pif.arlock = 0 ;
+ pif.arcache = 0 ;
+ pif.arprot = 0 ;
+ pif.arqos = 0 ;
+ pif.arregion = 0 ;
+ //pif.aruser = 0 ;
+ pif.arvalid = 0 ;
+ pif.arready = 0 ;
+
+// Read Data signals
+ pif.rid = 0 ;
+ pif.rdata = 0 ;
+ pif.rlast = 0 ;
+ //pif.ruser = 0 ;
+ pif.rvalid = 0 ;
+ pif.rready = 0 ;
+
+// Read Response Signals
+  pif.rresp = 0 ;
+
+endtask
+
+*/
 
 axi_assertion axi_assertion_i();
 axi_slave dut(
@@ -106,7 +172,7 @@ axi_slave dut(
 );
 
 initial begin
-#1000;
+#2000;
 $finish;
 end
 

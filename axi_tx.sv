@@ -52,8 +52,6 @@ function void print();
 	$display("cache = %d", cache);
 	$display("resp = %s", resp);
 	
-
-
 endfunction
 
 
