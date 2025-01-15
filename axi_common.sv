@@ -38,6 +38,6 @@ static mailbox gen2bfm = new();
 
 static virtual axi_intf vif;
 
-static string testname;
+static string testname = "test_5_wr_5_rd";
 
 endclass

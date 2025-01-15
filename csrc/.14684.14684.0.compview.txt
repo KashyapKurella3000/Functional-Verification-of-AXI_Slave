@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1736971622.244658255, "rt":0.17, "ut":0.05, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1736971622.013291170}
+{"VCS_COMP_START_TIME": 1736971622.013291170}
+{"VCS_COMP_END_TIME": 1736971622.489054249}
+{"VCS_USER_OPTIONS": "+systemverilogext+.sv +testname=test_5_wr_5_rd -sverilog top.sv"}

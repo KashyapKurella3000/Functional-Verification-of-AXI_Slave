@@ -1,5 +1,5 @@
+
 module axi_slave(
-parameter WIDTH =32;
 //################# Write Channel ######################################
 input aclk,
 input arst,
@@ -14,13 +14,13 @@ input [3:0] awcache,
 input [2:0] awprot,
 input awqos,
 input awregion,
-input awuser,
+//input awuser,
 input awvalid,
 output reg awready,
 
 // Write Data signals
 input [3:0] wid,
-input [WIDTH-1:0] wdata,
+input [31:0] wdata,
 input [3:0] wstrb,
 input wlast,
 input wvalid,
@@ -46,13 +46,13 @@ input [3:0] arcache,
 input [2:0] arprot,
 input arqos,
 input arregion,
-input aruser,
+//input aruser,
 input arvalid,
 output reg arready,
 
 // Read Data signals
 output reg [3:0] rid,
-output reg [WIDTH-1:0] rdata,
+output reg [31:0] rdata,
 output reg rlast,
 //output reg ruser,
 output reg rvalid,
@@ -63,10 +63,32 @@ output reg [1:0] rresp
 
 );
 
+parameter WIDTH =32;
 
 //reg[WIDTH-1:0] mem [DEPTH-1:0]; // if addr is 32 bit, DEPTH = 2 **ADDR_WIDTH == 2**32 = 4GB(my laptop RAM will become full, laptop might hang)
 
-reg[WIDTH-1:0] mem [int]; //Associative array to be used -> use only locations which are being access
+reg[31:0] mem [int]; //Associative array to be used -> use only locations which are being access
+
+reg [3:0] awid_t;
+reg [31:0] awaddr_t;
+reg [3:0] awlen_t;
+reg [2:0] awsize_t;
+reg [1:0] awburst_t;
+reg [1:0] awlock_t;
+reg [3:0] awcache_t;
+reg [2:0] awprot_t;
+
+reg [3:0] arid_t;
+reg [31:0] araddr_t;
+reg [3:0] arlen_t;
+reg [2:0] arsize_t;
+reg [1:0] arburst_t;
+reg [1:0] arlock_t;
+reg [3:0] arcache_t;
+reg [2:0] arprot_t;
+
+integer write_count;
+
 
 //Slave needs to complete handshaking
 
@@ -97,7 +119,7 @@ else
 		// Slave is collecting the write address information in to temp.varibles
 
 			awaddr_t  = awaddr;
-			awlen_t   = awlwn;
+			awlen_t   = awlen;
 			awsize_t  = awsize;
 			awburst_t = awburst;
 			awid_t    = awid;
@@ -109,7 +131,7 @@ else
 		else begin
 			awready   = 0;
 		end
-	// Write Data Handshake
+	// Write Data Channel Handshake
 		if(wvalid)begin
 			wready = 1;
 			store_write_data();
@@ -129,7 +151,7 @@ else
 		if(arvalid)begin
 			arready = 1;
 			araddr_t  = araddr;
-			arlen_t   = arlwn;
+			arlen_t   = arlen;
 			arsize_t  = arsize;
 			arburst_t = arburst;
 			arid_t    = arid;
@@ -205,8 +227,9 @@ endtask
 
 task drive_read_data();
 
-for (int i = 0;i< arlen_t +1; i++) begin
-	@(posedge aclk);
+for (int i = 0; i< arlen_t+1; i++) begin
+	
+@(posedge aclk);
 
 if(arsize_t == 0)begin
 
@@ -251,7 +274,7 @@ if(i == arlen_t) rlast = 1;
 end //End of for loop
 
 	@(posedge aclk);
-	rvalid = 0;
+	rvalid = 0;      
 	rid = 0;
 	rdata = 0;
 	rlast = 0;

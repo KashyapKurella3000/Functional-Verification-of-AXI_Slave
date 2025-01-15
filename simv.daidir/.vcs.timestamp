@@ -30,7 +30,7 @@ XRDP_SESSION=1
 XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_11
 XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_11
 XMODIFIERS=@im=ibus
-XDG_SESSION_ID=4401
+XDG_SESSION_ID=13668
 XDG_RUNTIME_DIR=/run/user/245522363
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/home/016018925@SJSUAD.SJSU.EDU/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
@@ -58,13 +58,13 @@ STROOT=/apps/synopsys/TCAD
 STRELEASE=current
 STDB=/home/016018925@SJSUAD.SJSU.EDU/sentaurus
 SSH_AUTH_SOCK=/run/user/245522363/keyring/ssh
-SSH_AGENT_PID=22631
+SSH_AGENT_PID=6359
 SNPS_VCS_PYTHON3=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SNPSLMS_LICENSE_FILE=27020@coe-ee-licsrv.sjsuad.sjsu.edu:C:LicensingSynopsysSynopsys_Key_Site_5009_Server_337521_snpslmd.lic
 SKIP_CDS_DIALOG=
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/22452,unix/unix:/tmp/.ICE-unix/22452
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/6180,unix/unix:/tmp/.ICE-unix/6180
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
@@ -93,13 +93,13 @@ HSP_HOME=/apps/synopsys/HSPICE/hspice
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
 GROUP=domain users
-GNOME_TERMINAL_SERVICE=:1.99
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/b80a8da5_ec30_4a69_827e_06445b024a9f
+GNOME_TERMINAL_SERVICE=:1.107
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/e3f65eed_34e6_4312_9cf9_8bd1795f4c9c
 GNOME_SHELL_SESSION_MODE=classic
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 DBUS_STARTER_BUS_TYPE=session
-DBUS_STARTER_ADDRESS=unix:abstract=/tmp/dbus-QxiWQdTxYo,guid=8e5d3e2d30394ed3e4ffd9ff676861bd
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-QxiWQdTxYo,guid=8e5d3e2d30394ed3e4ffd9ff676861bd
+DBUS_STARTER_ADDRESS=unix:abstract=/tmp/dbus-EuT8PqerAq,guid=bd43dc53c11c4d73f58edfc767880272
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-EuT8PqerAq,guid=bd43dc53c11c4d73f58edfc767880272
 COLORTERM=truecolor
 CLS_CSD_COMPATIBILITY_LOCKING=NO
 CLS_CDSD_COMPATIBILITY_LOCKING=NO
@@ -116,18 +116,18 @@ ARCH=linux
 1734681603 axi_intf.sv
 1734561568 axi_env.sv
 1734558325 axi_mon.sv
-1734683594 axi_gen.sv
+1736971956 axi_gen.sv
 1734558359 axi_cov.sv
-1734685995 axi_bfm.sv
-1734685945 axi_tx.sv
-1734682195 axi_common.sv
-1734895796 axi_slave.sv
+1736977537 axi_bfm.sv
+1735526847 axi_tx.sv
+1736972032 axi_common.sv
+1736975573 axi_slave.sv
 1734558679 axi_assertions.sv
-1734896673 top.sv
+1736974857 top.sv
 4
 1723522646 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvirsim.so
 1723520847 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/liberrorinf.so
 1723520604 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libsnpsmalloc.so
 1723521397 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvfs.so
-1734896683 simv.daidir
+1736977548 simv.daidir
 -1 partitionlib

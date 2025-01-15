@@ -33,6 +33,7 @@ end
 
 initial begin
 
+	//$value$plusargs("testname = %s",axi_common::testname);
 	axi_common::vif = pif; //pointing physical interface to virtual interface
 	rst = 1;
 	//reset_design_inputs();
@@ -108,6 +109,7 @@ endtask
 */
 
 axi_assertion axi_assertion_i();
+
 axi_slave dut(
 
 //Physical interface signals should be connected to axi_slave ports

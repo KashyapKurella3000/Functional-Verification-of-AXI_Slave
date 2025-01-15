@@ -110,7 +110,7 @@ endtask
 task read_addr_phase(axi_tx tx);
 	$display("read_addr_phase");
 
-	@(vif.aclk);
+	@(posedge vif.aclk);
 	vif.arid     = tx.id;
 	vif.araddr   = tx.addr;
 	vif.arlen    = tx.len;
@@ -126,8 +126,8 @@ task read_addr_phase(axi_tx tx);
 	wait(vif.arready == 1); //Wait for handshake completion
 	
 	//Reset Signals	
-	@(vif.aclk);
-	vif.arvalid = 0;
+	@(posedge vif.aclk);
+	vif.arvalid = 0; //
 	vif.arid = 0;
 	vif.araddr = 0;
 	vif.arlen = 0;
