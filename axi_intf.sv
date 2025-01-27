@@ -62,5 +62,9 @@ logic rready;
 // Read Response Signals
 logic [1:0] rresp;
 
+//Clocking Block
+
+//clokc
+
 
 endinterface

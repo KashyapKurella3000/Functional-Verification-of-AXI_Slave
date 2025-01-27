@@ -31,7 +31,7 @@ case(axi_common::testname)
 		for(int i = 0; i < 5; i++) begin
 			tx = new();
 			/*tx.randomize() with {wr_rd == WRITE;}; -> Cannot use this because here, reads happen to random locations but, we are supposed to read the same locations which 				were previously written. */
-			tx.randomize() with {wr_rd == READ; addr == txQ[i].addr; len == txQ[i].len; burst_size == txQ[i].burst_size;}; // making sure we read the same locations written before{Inline constraints}
+			tx.randomize() with {wr_rd == READ; addr == txQ[i].addr; len == txQ[i].len; burst_size == txQ[i].burst_size; id == txQ[i].id;}; // making sure we read the same locations written before{Inline constraints}
 			axi_common::gen2bfm.put(tx);
 		end
 	end

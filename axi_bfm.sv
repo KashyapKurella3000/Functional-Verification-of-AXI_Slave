@@ -41,7 +41,7 @@ endtask
 
 task write_addr_phase(axi_tx tx);
 	$display("write_addr_phase"); 
-	@(vif.aclk);
+	@(posedge vif.aclk);
 	vif.awid = tx.id;
 	vif.awaddr = tx.addr;
 	vif.awlen = tx.len;
@@ -57,7 +57,7 @@ task write_addr_phase(axi_tx tx);
 	wait(vif.awready == 1); //Wait for handshake completion
 	
 	//Reset Signals	
-	@(vif.aclk);
+	@(posedge vif.aclk);
 	vif.awvalid = 0;
 	vif.awid = 0;
 	vif.awaddr = 0;

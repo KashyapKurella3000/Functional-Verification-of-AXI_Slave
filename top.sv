@@ -43,7 +43,7 @@ initial begin
 	env.run();
 end
 
-/*
+
 task reset_design_inputs();
 
 // Write Address signals
@@ -106,7 +106,6 @@ task reset_design_inputs();
 
 endtask
 
-*/
 
 axi_assertion axi_assertion_i();
 
