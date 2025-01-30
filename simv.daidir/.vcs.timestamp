@@ -27,10 +27,10 @@ top.sv
 cdk_dir=/apps/cadence/IC50/tools/dfII/local
 XRDP_SOCKET_PATH=/run/xrdp
 XRDP_SESSION=1
-XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_10
-XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_10
+XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_12
+XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_12
 XMODIFIERS=@im=ibus
-XDG_SESSION_ID=22697
+XDG_SESSION_ID=862
 XDG_RUNTIME_DIR=/run/user/245522363
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/home/016018925@SJSUAD.SJSU.EDU/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
@@ -58,13 +58,13 @@ STROOT=/apps/synopsys/TCAD
 STRELEASE=current
 STDB=/home/016018925@SJSUAD.SJSU.EDU/sentaurus
 SSH_AUTH_SOCK=/run/user/245522363/keyring/ssh
-SSH_AGENT_PID=17719
+SSH_AGENT_PID=5727
 SNPS_VCS_PYTHON3=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SNPSLMS_LICENSE_FILE=27020@coe-ee-licsrv.sjsuad.sjsu.edu:C:LicensingSynopsysSynopsys_Key_Site_5009_Server_337521_snpslmd.lic
 SKIP_CDS_DIALOG=
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/17539,unix/unix:/tmp/.ICE-unix/17539
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/5548,unix/unix:/tmp/.ICE-unix/5548
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
@@ -93,13 +93,13 @@ HSP_HOME=/apps/synopsys/HSPICE/hspice
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
 GROUP=domain users
-GNOME_TERMINAL_SERVICE=:1.105
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/07d54712_91d3_49a3_b488_658e09ba9a78
+GNOME_TERMINAL_SERVICE=:1.100
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/f1a39714_d56b_49a0_8a25_1ea175989223
 GNOME_SHELL_SESSION_MODE=classic
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 DBUS_STARTER_BUS_TYPE=session
-DBUS_STARTER_ADDRESS=unix:abstract=/tmp/dbus-wbGXhovCRb,guid=bd40d24cde1dc458a3add05c6797c346
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wbGXhovCRb,guid=bd40d24cde1dc458a3add05c6797c346
+DBUS_STARTER_ADDRESS=unix:abstract=/tmp/dbus-GsSo5YtUby,guid=c0c6f3c92b94b9f11dcce6dc679abde4
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-GsSo5YtUby,guid=c0c6f3c92b94b9f11dcce6dc679abde4
 COLORTERM=truecolor
 CLS_CSD_COMPATIBILITY_LOCKING=NO
 CLS_CDSD_COMPATIBILITY_LOCKING=NO
@@ -113,12 +113,12 @@ ARCH=linux
 0
 0
 11
-1737999706 axi_intf.sv
+1738195729 axi_intf.sv
 1734561568 axi_env.sv
 1734558325 axi_mon.sv
-1738001131 axi_gen.sv
+1738004413 axi_gen.sv
 1734558359 axi_cov.sv
-1736978453 axi_bfm.sv
+1738196433 axi_bfm.sv
 1735526847 axi_tx.sv
 1736972032 axi_common.sv
 1736975573 axi_slave.sv
@@ -129,5 +129,5 @@ ARCH=linux
 1723520847 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/liberrorinf.so
 1723520604 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libsnpsmalloc.so
 1723521397 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvfs.so
-1738001254 simv.daidir
+1738196446 simv.daidir
 -1 partitionlib
